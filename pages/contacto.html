@@ -35,15 +35,17 @@
     </header>
     <main class="fondo">
         <video src="../multimedia/video-entretenido-contacto.mp4" height="100" width="400" autoplay="true" loop="true"></video>
-        <h3>Contacto</h3>
-        <form action="enviar.php" method="post" enctype="text/plain">
-            <label for="">Nombre y Apellido</label>
+        <div class="row m-auto w-25 mt-3 mb-2 text-center">
+            <h4 class="text-light bg-dark pt-1">Contacto</h4> <br><br>
+        </div>
+        <form action="enviar.php" method="post" enctype="text/plain" class="bg-dark">
+            <label class="text-light" for="">Nombre y Apellido</label>
             <input type="text" placeholder="Michael Jordan" required><br>
-            <label for="">Numero celular</label>
+            <label class="text-light" for="">Numero celular</label>
             <input type="number" required placeholder="11 1606-2003"><br>
-            <label for="">E-mail</label>
+            <label class="text-light" for="">E-mail</label>
             <input type="email" placeholder="Cichago-boss@gmail.com" required><br>
-            <label for="">¿Que le interesa saber?</label><br>
+            <label class="text-light" for="">¿Que le interesa saber?</label><br>
             <textarea id="" cols="50" rows="10" placeholder="Escribe aqui tu comentario.." ></textarea><br>
             <input type="submit" value="enviar" id="boton">
         </form>
