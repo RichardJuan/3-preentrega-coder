@@ -12,7 +12,7 @@ $colorprin: rgb(170, 125, 2);
 $colorhover: rgb(99, 74, 4);
 .inicio{
     text-align: center;
-    padding: 150px;
+    padding-top: 150px;
 }
 .inicio h1{
     font-size: 60px;
@@ -29,6 +29,7 @@ $colorhover: rgb(99, 74, 4);
 .inicio a:hover{
     color: $colorhover;
     font-size: 20px;
+    animation-name: arrow;
     transition: 1.1s;
 }
 header{
@@ -102,7 +103,40 @@ footer a:hover{
         height: 10%;
         width: 100%;
         margin: 0;
-        margin-top: 10px
+        margin-top: 10px;
+    }
+    main h4{
+        font-size: 20px;
+        border: none;
+        background: none;
+        box-shadow: none;
+        text-shadow: 5px 3px 3px black;
+    }
+    footer{
+        font-size: 10px;
+    }
+    footer h3{
+        font-size: 15px;
+    }
+    footer h6{
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width:400px){
+    header{
+        text-align: center;
+    }
+    header a{
+        font-size: 10px;
+    }
+    footer{
+        font-size: 7px;
+    }
+    footer h3{
+        font-size: 10px
+    }
+    footer h6{
+        font-size: 6px;
     }
 }
 

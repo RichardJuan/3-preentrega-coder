@@ -21,3 +21,8 @@ form{
     text-shadow: 5px 3px 3px black;
     transition: 0.5s;
 }
+@media only screen and (max-width:760px){
+    textarea{
+        width: 80%;
+    }
+}

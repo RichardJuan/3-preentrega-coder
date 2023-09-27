@@ -11,7 +11,7 @@
 }
 .inicio {
   text-align: center;
-  padding: 150px;
+  padding-top: 150px;
 }
 
 .inicio h1 {
@@ -31,6 +31,7 @@
 .inicio a:hover {
   color: rgb(99, 74, 4);
   font-size: 20px;
+  animation-name: arrow;
   transition: 1.1s;
 }
 
@@ -120,6 +121,39 @@ footer a:hover {
     margin: 0;
     margin-top: 10px;
   }
+  main h4 {
+    font-size: 20px;
+    border: none;
+    background: none;
+    box-shadow: none;
+    text-shadow: 5px 3px 3px black;
+  }
+  footer {
+    font-size: 10px;
+  }
+  footer h3 {
+    font-size: 15px;
+  }
+  footer h6 {
+    font-size: 10px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  header {
+    text-align: center;
+  }
+  header a {
+    font-size: 10px;
+  }
+  footer {
+    font-size: 7px;
+  }
+  footer h3 {
+    font-size: 10px;
+  }
+  footer h6 {
+    font-size: 6px;
+  }
 }
 .contenedor {
   display: grid;
@@ -203,6 +237,11 @@ form {
   transition: 0.5s;
 }
 
+@media only screen and (max-width: 760px) {
+  textarea {
+    width: 80%;
+  }
+}
 .og {
   padding-bottom: 5px;
   height: 200px;
@@ -224,6 +263,27 @@ iframe {
 @media only screen and (max-width: 1000px) {
   iframe {
     width: 60%;
+  }
+}
+@media only screen and (max-width: 1050px) {
+  .og {
+    margin: 0px;
+  }
+}
+@media only screen and (max-width: 660px) {
+  .og {
+    height: 150px;
+  }
+}
+@media only screen and (max-width: 280px) {
+  header {
+    text-align: center;
+  }
+  header a {
+    font-size: 10px;
+  }
+  .og {
+    height: 100px;
   }
 }
 .serv {
