@@ -10,57 +10,61 @@
 </head>
 <body>
     <header>
-        <div class="row bg-dark">
-            <h1 class="col-md-4 text-light">Og's</h1>
-            <h3 class="col-md-4 text-light">Original Represent</h3>
+        <div class="row">
+            <h1 class="col-md-8 col-lg-5 titulo-header">Og's</h1>
+            <h3 class="col-md-4 col-lg-4">Original Represent</h3>
         </div>
-        <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-dark d-flex justify-content-center">
-                <ul class="nav-item">
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="productos.html">Productos</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="servicios.html">Servicio</a></li>
-                    <li><a href="o-gs.html">Og's</a></li>
-                </ul>
-            </div>
-        </div>
-        <nav class=" navbar navbar-dark bg-dark">
+        <nav class=" navbar navbar-dark">
             <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             </div>
         </nav>
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class=" d-flex justify-content-center">
+                <ul class="nav-item">
+                    <li><a href="../index.html">Inicio</a></li>
+                    /
+                    <li><a href="productos.html">Productos</a></li>
+                    /
+                    <li><a href="contacto.html">Contacto</a></li>
+                    /
+                    <li><a href="servicios.html">Servicio</a></li>
+                    /
+                    <li><a href="o-gs.html">Og's</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
-    <main class="fondo">
+    <main>
         <video src="../multimedia/video-entretenido-contacto.mp4" height="100" width="400" autoplay="true" loop="true"></video>
         <div class="row m-auto w-25 mt-3 mb-2 text-center">
-            <h4 class="text-light bg-dark pt-1">Contacto</h4> <br><br>
+            <h4 class="pt-2">Contacto</h4> <br><br>
         </div>
-        <form action="enviar.php" method="post" enctype="text/plain" class="bg-dark">
-            <label class="text-light" for="">Nombre y Apellido</label>
+        <form action="enviar.php" method="post" enctype="text/plain">
+            <label  for="">Nombre y Apellido</label>
             <input type="text" placeholder="Michael Jordan" required><br>
-            <label class="text-light" for="">Numero celular</label>
+            <label for="">Numero celular</label>
             <input type="number" required placeholder="11 1606-2003"><br>
-            <label class="text-light" for="">E-mail</label>
+            <label for="">E-mail</label>
             <input type="email" placeholder="Cichago-boss@gmail.com" required><br>
-            <label class="text-light" for="">¿Que le interesa saber?</label><br>
+            <label for="">¿Que le interesa saber?</label><br>
             <textarea id="" cols="50" rows="10" placeholder="Escribe aqui tu comentario.." ></textarea><br>
             <input type="submit" value="enviar" id="boton">
         </form>
-        <ul type="none" class="listaDeContacto">
+        <ul type="none" class="lista-de-contacto">
             <li><a href="https://web.whatsapp.com/" target="_blank"><i class="fa-brands fa-whatsapp"></i> 09 11-1111-1111</a></li>
             <li><a href="https://mail.google.com/mail/u/0/#inbox" target="_blank"><i class="fa-solid fa-envelope"></i> ogs-hustler@gmail.com</a></li>
             <li><a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i> Og's</a></li>
         </ul><br>
     </main>
-    <footer class="bg-dark">
+    <footer>
         <div class="container">
             <div class="row">
                 <div class="col-4 d-flex justify-content-center">
                     <div class="footer-seccion mt-3">
-                        <h3 class="text-light">NAVEGACION:</h3>
+                        <h3>NAVEGACION:</h3>
                         <ul type="none">
                             <li><a href="../index.html" class="text-li">Inicio</a></li>
                             <li><a href="productos.html">Productos</a></li>
@@ -72,7 +76,7 @@
                 </div>
                 <div class="col-4 d-flex justify-content-center">
                     <div class="footer-seccion mt-3">
-                        <h3 class="text-light">CONTACTANOS:</h3>
+                        <h3>CONTACTANOS:</h3>
                         <ul type="none">
                             <li><a href="https://web.whatsapp.com/" target="_blank"><i class="fa-brands fa-whatsapp"></i> 09 11-1111-1111</a></li>
                             <li><a href="https://mail.google.com/mail/u/0/#inbox" target="_blank"><i class="fa-solid fa-envelope"></i> ogs-hustler@gmail.com</a></li>
@@ -81,7 +85,7 @@
                 </div>
                 <div class="col-4 d-flex justify-content-center">
                     <div class="footer-seccion mt-3">
-                        <h3 class="text-light">REDES:</h3>
+                        <h3>REDES:</h3>
                         <ul type="none">
                             <li><a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i> Og's</a></li>
                             <li><a href="https://www.tiktok.com/es/" target="_blank"><i class="fa-brands fa-tiktok"></i> Og's </a></li>

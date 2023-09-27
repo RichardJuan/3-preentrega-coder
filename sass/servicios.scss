@@ -1,0 +1,13 @@
+.serv{
+    color: $colorprin;
+    border: 4px outset $colorprin;
+    background-color: rgba(0, 0, 0, 0.603);
+    font-size: 20px;
+    box-shadow: 5px 3px 3px black;
+    text-shadow: 5px 3px 3px black;
+}
+@media only screen and (min-width:995px){
+    .col-lg-8{
+        margin-left: 17%;
+    }
+}

@@ -1,0 +1,49 @@
+.contenedor {
+    display: grid;
+    border: 3px outset $colorprin;
+    background-color: rgba(0, 0, 0, 0.603);
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 200px 200px;
+    grid-template-areas:
+                        "item1 item2 item3"
+                        "item4 item5 item5";
+    gap: 20px;
+    width: 80%;
+    height: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 5px 3px 3px black;
+}
+.item{
+    background-size: cover;
+    background-position: center;
+    border-radius: 7px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+.item:hover{
+    filter: contrast(60%);
+    border: 1px solid $colorprin;
+    transform: scale(1.1);
+    transition: 1s;
+}
+.item1{
+    background-image: url(../multimedia/publicacion1.jpg);
+    grid-area: item1;
+}
+.item2{
+    background-image: url(../multimedia/publicacion2.jpg);
+    grid-area: item2;
+}
+.item3{
+    background-image: url(../multimedia/publicacion3.jpg);
+    grid-area: item3;
+}
+.item4{
+    background-image: url(../multimedia/publicacion4.jpg);
+    grid-area: item4;
+}
+.item5{
+    background-image: url(../multimedia/publicacion5.jpg);
+    grid-area: item5;
+}
