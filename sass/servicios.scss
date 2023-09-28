@@ -6,6 +6,11 @@
     box-shadow: 5px 3px 3px black;
     text-shadow: 5px 3px 3px black;
 }
+@for $in from 1 through 4{
+    .bucle-#{$in} {
+        background-color: darken($colorprin, $in * 10%)
+    }
+} 
 @media only screen and (min-width:995px){
     .col-lg-8{
         margin-left: 17%;
