@@ -11,7 +11,8 @@
 }
 .inicio {
   text-align: center;
-  padding-top: 150px;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 .inicio h1 {
@@ -34,6 +35,11 @@
   transition: 1.1s;
 }
 
+p {
+  color: rgb(170, 125, 2);
+  text-shadow: 5px 5px 4px black;
+}
+
 header {
   background-color: black;
 }
@@ -43,9 +49,22 @@ header a {
   color: rgb(170, 125, 2);
 }
 
+#navbarNav a {
+  color: rgb(170, 125, 2);
+}
+
+#navbarNav a:hover {
+  color: rgb(99, 74, 4);
+  transition: 0.5s;
+}
+
 header a:hover {
   color: rgb(99, 74, 4);
   transition: 0.5s;
+}
+
+.icon {
+  color: rgb(170, 125, 2);
 }
 
 header ul {
@@ -66,10 +85,8 @@ video {
   background-image: url(../multimedia/publicacion3.jpg);
   background-position: right;
   background-size: cover;
-  height: 13%;
-  width: 60%;
+  width: 100%;
   margin-top: 10px;
-  margin-left: 20%;
   box-shadow: 5px 3px 3px black;
 }
 
@@ -85,17 +102,19 @@ main {
   background-image: url(../multimedia/fondo\ humo.jpg);
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
 }
 
 body {
-  position: relative;
-  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 footer {
   background-color: black;
   color: rgb(170, 125, 2);
+  width: 100%;
 }
 
 footer a {
@@ -108,14 +127,9 @@ footer a:hover {
   transition: 0.5s;
 }
 
-@media only screen and (max-width: 760px) {
-  video {
-    height: 10%;
-  }
-}
 @media only screen and (max-width: 550px) {
   video {
-    height: 10%;
+    height: 8vh;
     width: 100%;
     margin: 0;
     margin-top: 10px;
@@ -162,10 +176,10 @@ footer a:hover {
   grid-template-rows: 200px 200px;
   grid-template-areas: "item1 item2 item3" "item4 item5 item5";
   gap: 20px;
+  padding: 2%;
   width: 80%;
   height: 60%;
   margin: 0 auto;
-  padding: 20px;
   box-shadow: 5px 3px 3px black;
 }
 
@@ -243,7 +257,7 @@ form {
 }
 .og {
   padding-bottom: 5px;
-  height: 200px;
+  width: 55%;
   margin-left: 25%;
   box-shadow: 5px 30px 30px black;
   filter: grayscale(25);
@@ -264,27 +278,21 @@ iframe {
     width: 60%;
   }
 }
-@media only screen and (max-width: 1050px) {
-  .og {
-    margin: 0px;
-  }
+/*@media only screen and (max-width:1050px){
+    .og{
+        margin: 0px;
+    }
 }
-@media only screen and (max-width: 660px) {
-  .og {
-    height: 150px;
-  }
+@media only screen and (max-width:660px){
+    .og{
+        height: 150px;
+    }
 }
-@media only screen and (max-width: 280px) {
-  header {
-    text-align: center;
-  }
-  header a {
-    font-size: 10px;
-  }
-  .og {
-    height: 100px;
-  }
-}
+@media only screen and (max-width:280px){
+    .og{
+        height: 100px;
+    }
+}*/
 .serv {
   color: rgb(170, 125, 2);
   border: 4px outset rgb(170, 125, 2);
@@ -292,22 +300,6 @@ iframe {
   font-size: 20px;
   box-shadow: 5px 3px 3px black;
   text-shadow: 5px 3px 3px black;
-}
-
-.bucle-1 {
-  background-color: #785801;
-}
-
-.bucle-2 {
-  background-color: #453301;
-}
-
-.bucle-3 {
-  background-color: #130e00;
-}
-
-.bucle-4 {
-  background-color: black;
 }
 
 @media only screen and (min-width: 995px) {

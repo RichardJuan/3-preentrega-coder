@@ -1,6 +1,6 @@
 .og{
     padding-bottom: 5px;
-    height: 200px;
+    width: 55%;
     margin-left: 25%;
     box-shadow: 5px 30px 30px black;
     filter: grayscale(25);
@@ -18,7 +18,7 @@ iframe{
         width: 60%;
     }
 }
-@media only screen and (max-width:1050px){
+/*@media only screen and (max-width:1050px){
     .og{
         margin: 0px;
     }
@@ -29,13 +29,7 @@ iframe{
     }
 }
 @media only screen and (max-width:280px){
-    header{
-        text-align: center;
-    }
-    header a{
-        font-size: 10px;
-    }
     .og{
         height: 100px;
     }
-}
+}*/
