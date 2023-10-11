@@ -6,7 +6,7 @@
 }
 @font-face {
     font-family: Galgine;
-    src: url(../../3-preentrega/font/Galgine.otf);
+    src: url(../font/Galgine.otf);
 }
 $colorprin: rgb(170, 125, 2);
 $colorhover: rgb(99, 74, 4);
@@ -69,7 +69,7 @@ h1, h3{
     color: $colorprin;
 }
 video{
-    background-image: url(https://richardjuan.github.io/3-preentrega-coder/multimedia/publicacion3.jpg);
+    background-image: url(https://richardjuan.github.io/PF-Richard/multimedia/publicacion3.jpg);
     background-position: right;
     background-size: cover;
     width: 100%;
@@ -84,7 +84,7 @@ h4{
     box-shadow: 5px 5px 4px black;
 }
 main{
-    background-image: url(https://richardjuan.github.io/3-preentrega-coder/multimedia/fondo-humo.jpg);
+    background-image: url(https://richardjuan.github.io/PF-Richard/multimedia/fondo-humo.jpg);
     background-position: center;
     background-size: cover;
     height: 100%;
