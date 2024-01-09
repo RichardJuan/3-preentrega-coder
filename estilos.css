@@ -82,7 +82,7 @@ h1, h3 {
 }
 
 video {
-  background-image: url(https://richardjuan.github.io/PF-Richard/multimedia/publicacion3.jpg);
+  background-image: url(https://richardjuan.github.io/PreEntrega1-Richard/multimedia/publicacion3.jpg);
   background-position: right;
   background-size: cover;
   width: 100%;
@@ -99,7 +99,7 @@ h4 {
 }
 
 main {
-  background-image: url(https://richardjuan.github.io/PF-Richard/multimedia/fondo-humo.jpg);
+  background-image: url(https://richardjuan.github.io/PreEntrega1-Richard/multimedia/fondo-humo.jpg);
   background-position: center;
   background-size: cover;
   height: 100%;
@@ -199,27 +199,27 @@ footer a:hover {
 }
 
 .item1 {
-  background-image: url(https://richardjuan.github.io/PF-Richard/multimedia/publicacion1.jpg);
+  background-image: url(https://richardjuan.github.io/PreEntrega1-Richard/multimedia/publicacion1.jpg);
   grid-area: item1;
 }
 
 .item2 {
-  background-image: url(https://richardjuan.github.io/PF-Richard/multimedia/publicacion2.jpg);
+  background-image: url(https://richardjuan.github.io/PreEntrega1-Richard/multimedia/publicacion2.jpg);
   grid-area: item2;
 }
 
 .item3 {
-  background-image: url(https://richardjuan.github.io/PF-Richard/multimedia/publicacion3.jpg);
+  background-image: url(https://richardjuan.github.io/PreEntrega1-Richard/multimedia/publicacion3.jpg);
   grid-area: item3;
 }
 
 .item4 {
-  background-image: url(https://richardjuan.github.io/PF-Richard/multimedia/publicacion4.jpg);
+  background-image: url(https://richardjuan.github.io/PreEntrega1-Richard/multimedia/publicacion4.jpg);
   grid-area: item4;
 }
 
 .item5 {
-  background-image: url(https://richardjuan.github.io/PF-Richard/multimedia/publicacion5.jpg);
+  background-image: url(https://richardjuan.github.io/PreEntrega1-Richard/multimedia/publicacion5.jpg);
   grid-area: item5;
 }
 
