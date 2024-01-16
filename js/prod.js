@@ -1,9 +1,23 @@
+let PrecioST = 45000;
+let PrecioAF = 70000;
+let PrecioAM = 80000;
+let PrecioJ1 = 220000;
+let PrecioJ5 = 260000;
 function FuncionStefanJanoski(){
     let metodoDePago = prompt("¿contado o cuotas?");
     if (metodoDePago === "contado"){
         alert("El monto a abonar será de $45.000");
     }else if (metodoDePago === "cuotas"){
-        alert(`La opcion de cuotas para Nike Stefan Janoski es de 6 x $8.400`);
+        for (let c = 2; c <= 6; c++){
+            if (c === 3){
+                continue;
+            }
+            if (c === 5){
+                continue;
+            }
+            let cuota = ((PrecioST / 2) + 20500 / c);
+            alert("las opciones son " + c + " de " + cuota);
+        }
     }else{
         alert("Elija una opcion de las anteriores");
     }
@@ -13,7 +27,16 @@ function FuncionAirForce1(){
     if (metodoDePago === "contado"){
         alert("El monto a abonar será de $70.000");
     }else if (metodoDePago === "cuotas"){
-        alert(`La opcion de cuotas para Air Force 1 es de 6 x $12.500`);
+        for (let c = 2; c <= 6; c++){
+            if (c === 3){
+                continue;
+            }
+            if (c === 5){
+                continue;
+            }
+            let cuota = ((PrecioAF / 2) + 35000 / c);
+            alert("las opciones son " + c + " de " + cuota);
+        }
     }else{
         alert("Elija una opcion de las anteriores");
     }
@@ -23,7 +46,16 @@ function FuncionAirMax90(){
     if (metodoDePago === "contado"){
         alert("El monto a abonar será de $80.000");
     }else if (metodoDePago === "cuotas"){
-        alert(`La opcion de cuotas para Air Max 90 es de 6 x $14.166`);
+        for (let c = 2; c <= 6; c++){
+            if (c === 3){
+                continue;
+            }
+            if (c === 5){
+                continue;
+            }
+            let cuota = ((PrecioAM / 2) + 40000 / c);
+            alert("las opciones son " + c + " de " + cuota);
+        }
     }else{
         alert("Elija una opcion de las anteriores");
     }
@@ -33,7 +65,16 @@ function FuncionJordan1(){
     if (metodoDePago === "contado"){
         alert("El monto a abonar será de $220.000");
     }else if (metodoDePago === "cuotas"){
-        alert(`La opcion de cuotas para Jordan 1 es de 6 x $38.333`);
+        for (let c = 2; c <= 6; c++){
+            if (c === 3){
+                continue;
+            }
+            if (c === 5){
+                continue;
+            }
+            let cuota = ((PrecioJ1 / 2) + 110000 / c);
+            alert("las opciones son " + c + " de " + cuota);
+        }
     }else{
         alert("Elija una opcion de las anteriores");
     }
@@ -43,7 +84,16 @@ function FuncionJordan5(){
     if (metodoDePago === "contado"){
         alert("El monto a abonar será de $260.000");
     }else if (metodoDePago === "cuotas"){
-        alert(`La opcion de cuotas para Jordan 5 es de 6 x $45.000`);
+        for (let c = 2; c <= 6; c++){
+            if (c === 3){
+                continue;
+            }
+            if (c === 5){
+                continue;
+            }
+            let cuota = ((PrecioJ5 / 2) + 130000 / c);
+            alert("las opciones son " + c + " de " + cuota);
+        }
     }else{
         alert("Elija una opcion de las anteriores");
     }
