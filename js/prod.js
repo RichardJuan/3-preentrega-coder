@@ -1,8 +1,26 @@
-let PrecioST = 45000;
-let PrecioAF = 70000;
-let PrecioAM = 80000;
-let PrecioJ1 = 220000;
-let PrecioJ5 = 260000;
+/*class Articulosss{
+    constructor (Marca, Modelo, Precio, Talle){
+        this.Marca = Marca;
+        this.Modelo = Modelo;
+        this.Precio = Precio;
+        this.Talle = Talle;
+    };
+}
+    const NSJ = new Articulosss ("Nike", "Stefan Janoski", 45000, 41);
+    const AF1 = new Articulosss ("Nike", "Air Force 1", 70000, 41);
+    const AM90 = new Articulosss ("Nike", "Air Max 90", 80000, 41);
+    const J1 = new Articulosss ("Nike", "Jordan 1", 220000, 41);
+    const J5 = new Articulosss ("Nike", "Jordan", 260000, 41);
+*/
+
+const Catalogo = [
+    {Marca: "Nike", Modelo: "Nike Stefan Janoski", Precio: 45000, talle: 41},
+    {Marca: "Nike", Modelo: "Air Force 1", Precio: 70000, talle: 41},
+    {Marca: "Nike", Modelo: "Air Max 90", Precio: 80000, talle: 41},
+    {Marca: "Nike", Modelo: "Jordan 1", Precio: 220000, talle: 41},
+    {Marca: "Nike", Modelo: "Jordan 5", Precio: 260000, talle: 41},
+]
+
 function FuncionStefanJanoski(){
     let metodoDePago = prompt("¿contado o cuotas?");
     if (metodoDePago === "contado"){
@@ -15,7 +33,7 @@ function FuncionStefanJanoski(){
             if (c === 5){
                 continue;
             }
-            let cuota = ((PrecioST / 2) + 20500 / c);
+            let cuota = ((Catalogo[0].Precio / 2) + 20500 / c);
             alert("las opciones son " + c + " de " + cuota);
         }
     }else{
@@ -34,7 +52,7 @@ function FuncionAirForce1(){
             if (c === 5){
                 continue;
             }
-            let cuota = ((PrecioAF / 2) + 35000 / c);
+            let cuota = ((Catalogo[1].Precio / 2) + 35000 / c);
             alert("las opciones son " + c + " de " + cuota);
         }
     }else{
@@ -53,7 +71,7 @@ function FuncionAirMax90(){
             if (c === 5){
                 continue;
             }
-            let cuota = ((PrecioAM / 2) + 40000 / c);
+            let cuota = ((Catalogo[2].Precio / 2) + 40000 / c);
             alert("las opciones son " + c + " de " + cuota);
         }
     }else{
@@ -72,7 +90,7 @@ function FuncionJordan1(){
             if (c === 5){
                 continue;
             }
-            let cuota = ((PrecioJ1 / 2) + 110000 / c);
+            let cuota = ((Catalogo[3].Precio / 2) + 110000 / c);
             alert("las opciones son " + c + " de " + cuota);
         }
     }else{
@@ -91,7 +109,7 @@ function FuncionJordan5(){
             if (c === 5){
                 continue;
             }
-            let cuota = ((PrecioJ5 / 2) + 130000 / c);
+            let cuota = ((Catalogo[4].Precio / 2) + 130000 / c);
             alert("las opciones son " + c + " de " + cuota);
         }
     }else{
@@ -99,9 +117,18 @@ function FuncionJordan5(){
     }
 }
 let Monto = prompt("¿Cuanto esta dispuesto a invertir en su estetica? (45000, 70000, 80000, 220000 o 260000)");
+
+let Filtrado = Catalogo.filter ((item) => item.Precio <= Monto)
+const accesible = [];
+accesible.join();
+let encontrados = Filtrado.forEach((item) => {
+    accesible.push(item.Modelo);
+});
+
 if (Monto >= 260000 ){
-    let Eleccion = prompt(`Si cuenta con ${Monto} pesos, tiene disponibilidad de todo el catalogo: Nike stefan janoski, Air force 1, Air max 90, Jordan 1 o Jordan 5.
-    ¿Cual le gustaria llevar?`);
+    let Eleccion = prompt(`Si cuenta con ${Monto} pesos, tiene disponibilidad de todo el catalogo: ${accesible}.
+¿Cual le gustaria llevar?`);
+    Catalogo.includes(`${Eleccion}`)
     if (Eleccion == "Nike stefan janoski"){
         FuncionStefanJanoski();
     }else if (Eleccion == "Air force 1"){
@@ -116,8 +143,9 @@ if (Monto >= 260000 ){
         alert("Debe ingresar un modelo")
     }
 }else if(Monto >= 220000){
-    let Eleccion = prompt(`Si cuenta con ${Monto} pesos, tiene disponibilidad del catalogo: Nike Stefan Janoski, Air force 1, Air max 90 o Jordan 1.
-    ¿Cual le gustaria llevar?`);
+    let Eleccion = prompt(`Si cuenta con ${Monto} pesos, tiene disponibilidad de todo el catalogo: ${accesible}.
+¿Cual le gustaria llevar?`);
+    Catalogo.includes(`${Eleccion}`)
     if (Eleccion == "Nike stefan janoski"){
         FuncionStefanJanoski();
     }else if (Eleccion == "Air force 1"){
@@ -130,8 +158,9 @@ if (Monto >= 260000 ){
         alert("Debe ingresar un modelo")
     }
 }else if(Monto >= 80000){
-    let Eleccion = prompt(`Si cuenta con ${Monto} pesos, tiene disponibilidad del catalogo: Nike stefan janoski, Air force 1 o Air max 90.
-    ¿Cual le gustaria llevar?`);
+    let Eleccion = prompt(`Si cuenta con ${Monto} pesos, tiene disponibilidad de todo el catalogo: ${accesible}.
+¿Cual le gustaria llevar?`);
+    Catalogo.includes(`${Eleccion}`)
     if (Eleccion == "Nike stefan janoski"){
         FuncionStefanJanoski();
     }else if (Eleccion == "Air force 1"){
@@ -142,8 +171,9 @@ if (Monto >= 260000 ){
         alert("Debe ingresar un modelo")
     }
 }else if(Monto >= 70000){
-    let Eleccion = prompt(`Si cuenta con ${Monto} pesos, tiene disponibilidad de todo el catalogo: Nike stefan janoski o Air force 1.
-    ¿Cual le gustaria llevar?`)
+    let Eleccion = prompt(`Si cuenta con ${Monto} pesos, tiene disponibilidad de todo el catalogo: ${accesible}.
+¿Cual le gustaria llevar?`);
+    Catalogo.includes(`${Eleccion}`)
     if (Eleccion == "Nike stefan janoski"){
         FuncionStefanJanoski();
     }else if (Eleccion == "Air force 1"){
@@ -152,12 +182,31 @@ if (Monto >= 260000 ){
         alert("Debe ingresar un modelo")
     }
 }else if(Monto >= 45000){
-    let Eleccion = prompt(`Si cuenta con ${Monto} pesos, solo tiene alcance para las Nike stefan janoski. (ingrese "ok")`)
-    if (Eleccion == "ok"){
+    let Eleccion = prompt(`Si cuenta con ${Monto} pesos, tiene disponibilidad de todo el catalogo: ${accesible}.
+¿Cual le gustaria llevar?`);
+    if (Eleccion == "Nike stefan janoski"){
+        Catalogo.includes(`${Eleccion}`)
         FuncionStefanJanoski();
     }else{
         alert("Debe ingresar un modelo")
     }
 }else{
     alert(`Lo sentimos, con ${Monto} pesos no tenemos disponibilidad de ningun producto.`);
-}
+};
+
+const carrito = []
+
+let agregar = prompt(`Que articulo quiere agregar? ${accesible}`)
+if(accesible.find ((item) => item.Modelo === agregar)){
+    carrito.push(agregar)
+    alert(`Tu carrito de ${carrito}, cuesta`)
+};
+
+let cupon = Math.round(Math.random()* 100 + 200);
+let cuponIngresado = prompt(`Felicidades, por ser su primer compra le regalamos un cupon del 10% OFF. INGRESE OG${cupon}`)
+
+let costoTotal = (carrito.Precio - 0.10);
+
+if(cuponIngresado === `OG${cupon}`){
+    alert(`El total a abonar sera de ${costoTotal}`)
+};
