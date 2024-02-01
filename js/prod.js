@@ -1,30 +1,29 @@
-/*class Articulosss{
-    constructor (Marca, Modelo, Precio, Talle){
+//Definicion del catalogo y sus elementos
+class Articulo {
+    constructor(Marca, Modelo, Precio, Talle) {
         this.Marca = Marca;
         this.Modelo = Modelo;
         this.Precio = Precio;
         this.Talle = Talle;
-    };
+    }
 }
-    const NSJ = new Articulosss ("Nike", "Stefan Janoski", 45000, 41);
-    const AF1 = new Articulosss ("Nike", "Air Force 1", 70000, 41);
-    const AM90 = new Articulosss ("Nike", "Air Max 90", 80000, 41);
-    const J1 = new Articulosss ("Nike", "Jordan 1", 220000, 41);
-    const J5 = new Articulosss ("Nike", "Jordan", 260000, 41);
-*/
 
-const Catalogo = [
-    {Marca: "Nike", Modelo: "Nike Stefan Janoski", Precio: 45000, talle: 41},
-    {Marca: "Nike", Modelo: "Air Force 1", Precio: 70000, talle: 41},
-    {Marca: "Nike", Modelo: "Air Max 90", Precio: 80000, talle: 41},
-    {Marca: "Nike", Modelo: "Jordan 1", Precio: 220000, talle: 41},
-    {Marca: "Nike", Modelo: "Jordan 5", Precio: 260000, talle: 41},
-]
+const NSJ = new Articulo("Nike", "Stefan Janoski", 45000, 41);
+const AF1 = new Articulo("Nike", "Air Force 1", 70000, 41);
+const AM90 = new Articulo("Nike", "Air Max 90", 80000, 41);
+const J1 = new Articulo("Nike", "Jordan 1", 220000, 41);
+const J5 = new Articulo("Nike", "Jordan 5", 260000, 41);
 
+const Catalogo = [NSJ, AF1, AM90, J1, J5];
+
+
+const carrito = []
+
+//Calculos de cuotas respectivas a cada elemento del catalogo en funciones
 function FuncionStefanJanoski(){
     let metodoDePago = prompt("¿contado o cuotas?");
     if (metodoDePago === "contado"){
-        alert("El monto a abonar será de $45.000");
+        alert(`El monto a abonar será de ${NSJ.Precio}`);
     }else if (metodoDePago === "cuotas"){
         for (let c = 2; c <= 6; c++){
             if (c === 3){
@@ -39,11 +38,11 @@ function FuncionStefanJanoski(){
     }else{
         alert("Elija una opcion de las anteriores");
     }
-}
+};
 function FuncionAirForce1(){
     let metodoDePago = prompt("¿contado o cuotas?");
     if (metodoDePago === "contado"){
-        alert("El monto a abonar será de $70.000");
+        alert(`El monto a abonar será de ${AF1.Precio}`);
     }else if (metodoDePago === "cuotas"){
         for (let c = 2; c <= 6; c++){
             if (c === 3){
@@ -58,11 +57,11 @@ function FuncionAirForce1(){
     }else{
         alert("Elija una opcion de las anteriores");
     }
-}
+};
 function FuncionAirMax90(){
     let metodoDePago = prompt("¿contado o cuotas?");
     if (metodoDePago === "contado"){
-        alert("El monto a abonar será de $80.000");
+        alert(`El monto a abonar será de ${AM90.Precio}`);
     }else if (metodoDePago === "cuotas"){
         for (let c = 2; c <= 6; c++){
             if (c === 3){
@@ -77,11 +76,12 @@ function FuncionAirMax90(){
     }else{
         alert("Elija una opcion de las anteriores");
     }
-}
+
+};
 function FuncionJordan1(){
     let metodoDePago = prompt("¿contado o cuotas?");
     if (metodoDePago === "contado"){
-        alert("El monto a abonar será de $220.000");
+        alert(`El monto a abonar será de ${J1.Precio}`);
     }else if (metodoDePago === "cuotas"){
         for (let c = 2; c <= 6; c++){
             if (c === 3){
@@ -96,11 +96,11 @@ function FuncionJordan1(){
     }else{
         alert("Elija una opcion de las anteriores");
     }
-}
+};
 function FuncionJordan5(){
     let metodoDePago = prompt("¿contado o cuotas?");
     if (metodoDePago === "contado"){
-        alert("El monto a abonar será de $260.000");
+        alert(`El monto a abonar será de ${J5.Precio}`);
     }else if (metodoDePago === "cuotas"){
         for (let c = 2; c <= 6; c++){
             if (c === 3){
@@ -115,77 +115,76 @@ function FuncionJordan5(){
     }else{
         alert("Elija una opcion de las anteriores");
     }
-}
+};
+
 let Monto = prompt("¿Cuanto esta dispuesto a invertir en su estetica? (45000, 70000, 80000, 220000 o 260000)");
 
+//Filtrado y definicion de articulos en base al monto disponible 
 let Filtrado = Catalogo.filter ((item) => item.Precio <= Monto)
-const accesible = [];
-accesible.join();
-let encontrados = Filtrado.forEach((item) => {
-    accesible.push(item.Modelo);
-});
+const accesible = Filtrado.map((elemento) => elemento.Modelo);
+
 
 if (Monto >= 260000 ){
     let Eleccion = prompt(`Si cuenta con ${Monto} pesos, tiene disponibilidad de todo el catalogo: ${accesible}.
 ¿Cual le gustaria llevar?`);
-    Catalogo.includes(`${Eleccion}`)
-    if (Eleccion == "Nike stefan janoski"){
-        FuncionStefanJanoski();
-    }else if (Eleccion == "Air force 1"){
-        FuncionAirForce1();
-    }else if (Eleccion == "Air max 90"){
-        FuncionAirMax90();
-    }else if (Eleccion == "Jordan 1"){
-        FuncionJordan1();
-    }else if (Eleccion == "Jordan 5"){
-        FuncionJordan5();
-    }else{
-        alert("Debe ingresar un modelo")
-    }
+Catalogo.some((item) => item.Modelo === Eleccion)
+if (Eleccion === "Nike Stefan Janoski"){
+    FuncionStefanJanoski();
+}else if (Eleccion === "Air Force 1"){
+    FuncionAirForce1();
+}else if (Eleccion === "Air Max 90"){
+    FuncionAirMax90();
+}else if (Eleccion === "Jordan 1"){
+    FuncionJordan1();
+}else if (Eleccion === "Jordan 5"){
+    FuncionJordan5();
+}else{
+    alert("Debe ingresar un modelo")
+}
 }else if(Monto >= 220000){
-    let Eleccion = prompt(`Si cuenta con ${Monto} pesos, tiene disponibilidad de todo el catalogo: ${accesible}.
-¿Cual le gustaria llevar?`);
-    Catalogo.includes(`${Eleccion}`)
-    if (Eleccion == "Nike stefan janoski"){
+    let Eleccion = prompt(`Si cuenta con ${Monto} pesos, tiene disponibilidad de los siguientes articulos del catalogo: ${accesible}.
+    ¿Cual le gustaria llevar?`);
+    Catalogo.some(item => item.Modelo === Eleccion)
+    if (Eleccion === "Nike Stefan jJanoski"){
         FuncionStefanJanoski();
-    }else if (Eleccion == "Air force 1"){
+    }else if (Eleccion === "Air Force 1"){
         FuncionAirForce1();
-    }else if (Eleccion == "Air max 90"){
+    }else if (Eleccion === "Air Max 90"){
         FuncionAirMax90();
-    }else if (Eleccion == "Jordan 1"){
+    }else if (Eleccion === "Jordan 1"){
         FuncionJordan1();
     }else{
         alert("Debe ingresar un modelo")
     }
 }else if(Monto >= 80000){
-    let Eleccion = prompt(`Si cuenta con ${Monto} pesos, tiene disponibilidad de todo el catalogo: ${accesible}.
-¿Cual le gustaria llevar?`);
-    Catalogo.includes(`${Eleccion}`)
-    if (Eleccion == "Nike stefan janoski"){
+    let Eleccion = prompt(`Si cuenta con ${Monto} pesos, tiene disponibilidad de los siguientes articulos del catalogo: ${accesible}.
+    ¿Cual le gustaria llevar?`);
+    Catalogo.some(item => item.Modelo === Eleccion)
+    if (Eleccion === "Nike Stefan Janoski"){
         FuncionStefanJanoski();
-    }else if (Eleccion == "Air force 1"){
+    }else if (Eleccion === "Air Force 1"){
         FuncionAirForce1();
-    }else if (Eleccion == "Air max 90"){
+    }else if (Eleccion === "Air Max 90"){
         FuncionAirMax90();
     }else{
         alert("Debe ingresar un modelo")
     }
 }else if(Monto >= 70000){
-    let Eleccion = prompt(`Si cuenta con ${Monto} pesos, tiene disponibilidad de todo el catalogo: ${accesible}.
-¿Cual le gustaria llevar?`);
-    Catalogo.includes(`${Eleccion}`)
-    if (Eleccion == "Nike stefan janoski"){
+    let Eleccion = prompt(`Si cuenta con ${Monto} pesos, tiene disponibilidad de los siguientes articulos del catalogo: ${accesible}.
+    ¿Cual le gustaria llevar?`);
+    Catalogo.some(item => item.Modelo === Eleccion)
+    if (Eleccion === "Nike Stefan Janoski"){
         FuncionStefanJanoski();
-    }else if (Eleccion == "Air force 1"){
+    }else if (Eleccion === "Air Force 1"){
         FuncionAirForce1();
     }else{
         alert("Debe ingresar un modelo")
     }
 }else if(Monto >= 45000){
-    let Eleccion = prompt(`Si cuenta con ${Monto} pesos, tiene disponibilidad de todo el catalogo: ${accesible}.
-¿Cual le gustaria llevar?`);
-    if (Eleccion == "Nike stefan janoski"){
-        Catalogo.includes(`${Eleccion}`)
+    let Eleccion = prompt(`Si cuenta con ${Monto} pesos, tiene disponibilidad unicamente de: ${accesible}.
+    De querer continuar con la compra ingrese "Si"`);
+    if (Eleccion === "Si" || Eleccion === "si"){
+        Catalogo.some(item => item.Modelo === Eleccion)
         FuncionStefanJanoski();
     }else{
         alert("Debe ingresar un modelo")
@@ -194,18 +193,20 @@ if (Monto >= 260000 ){
     alert(`Lo sentimos, con ${Monto} pesos no tenemos disponibilidad de ningun producto.`);
 };
 
-const carrito = []
+let agregar = prompt(`¿Que articulo desea agregar? ${accesible}`)
+if(accesible.includes(agregar)){
+    carrito.push(agregar);
+    let elementoSeleccionado = Catalogo.find((elemento) => elemento.Modelo === agregar)
+    alert(`el costo de tu carrito es de $${elementoSeleccionado.Precio}`);
+}
 
-let agregar = prompt(`Que articulo quiere agregar? ${accesible}`)
-if(accesible.find ((item) => item.Modelo === agregar)){
-    carrito.push(agregar)
-    alert(`Tu carrito de ${carrito}, cuesta`)
-};
-
+//Generacion de cupon de descuento
 let cupon = Math.round(Math.random()* 100 + 200);
 let cuponIngresado = prompt(`Felicidades, por ser su primer compra le regalamos un cupon del 10% OFF. INGRESE OG${cupon}`)
 
-let costoTotal = (carrito.Precio - 0.10);
+//Calculo del costo del articulo - el descuento
+
+let costoTotal = carrito.reduce((total, elemento) => total + Catalogo.find((articulo) => articulo.Modelo === agregar).Precio, 0)*0.9;
 
 if(cuponIngresado === `OG${cupon}`){
     alert(`El total a abonar sera de ${costoTotal}`)
