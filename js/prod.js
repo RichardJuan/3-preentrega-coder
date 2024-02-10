@@ -124,8 +124,9 @@ let Filtrado = Catalogo.filter ((item) => item.Precio <= Monto)
 const accesible = Filtrado.map((elemento) => elemento.Modelo);
 
 
+/*
 if (Monto >= 260000 ){
-    let Eleccion = prompt(`Si cuenta con ${Monto} pesos, tiene disponibilidad de todo el catalogo: ${accesible}.
+    let Eleccion = prompt(`Si cuenta con ${Monto} pesos, tiene disponibilidad de los siguientes articulos del catalogo: ${accesible}.
 ¿Cual le gustaria llevar?`);
 Catalogo.some((item) => item.Modelo === Eleccion)
 if (Eleccion === "Nike Stefan Janoski"){
@@ -192,7 +193,7 @@ if (Eleccion === "Nike Stefan Janoski"){
 }else{
     alert(`Lo sentimos, con ${Monto} pesos no tenemos disponibilidad de ningun producto.`);
 };
-
+*/
 let agregar = prompt(`¿Que articulo desea agregar? ${accesible}`)
 if(accesible.includes(agregar)){
     carrito.push(agregar);

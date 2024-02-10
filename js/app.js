@@ -20,7 +20,7 @@ Formulario.addEventListener("submit", (e) => {
     
     //condicion?respuesta:respuestalternativa
     let respuesta = document.getElementById("respuesta");
-    
+    //Operador terrario implementado
     edad >= 16?respuesta.innerText = `Bienvenido ${Nombre}, ingresa a "Productos" para que veas lo que tenemos para ofrecerte`: respuesta.innerText = "Recomenamos que seas mayor de 16 años para ingresar a nuestra pagina. Buena suerte, nos vemos pronto";
 });
 
