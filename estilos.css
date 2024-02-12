@@ -223,11 +223,6 @@ footer a:hover {
   grid-area: item5;
 }
 
-#InteraccionP {
-  width: 100%;
-  border: none;
-}
-
 .form {
   color: rgb(170, 125, 2);
   background-color: rgba(0, 0, 0, 0.603);

@@ -1,9 +1,13 @@
 function finalizarProceso(){
 InteraccionP.addEventListener("click", () => {
-        localStorage.setItem("carrito", carrito);
-        location.reload();
+    localStorage.setItem("compra", JSON.stringify(carrito));
+    console.log(carrito);
+    opciones.innerText = "Graciass"
+    let boton = document.getElementById("boton1");
+    boton.remove();
     })
 }
+
 //Definicion del catalogo y sus elementos
 class Articulo {
     constructor(Marca, Modelo, Precio, Talle) {
@@ -29,12 +33,12 @@ cartera.addEventListener("submit", (e) => {
     let inputs = e.target.children;
     let Monto = inputs[0].value;
     sessionStorage.setItem("Monto", Monto);
-//Filtrado y definicion de articulos en base al monto disponible 
+    //Filtrado y definicion de articulos en base al monto disponible 
     let Filtrado = Catalogo.filter ((item) => item.Precio <= Monto);
     const accesible = Filtrado.map((elemento) => elemento.Modelo);
     sessionStorage.setItem("accesible", accesible);
     let opciones = document.getElementById("opciones");
-//operador ternario en caso de que el monto sea menor al minimo
+    //operador ternario en caso de que el monto sea menor al minimo
     Monto<45000?opciones.innerText="Lo siento, no contamos con ninguna unidad de ese monto":opciones.innerText = `Con $${Monto} a dispocisión, tenemos para ofrecerte: ${accesible}`;
 });
 //traemos el formulario de los productos
@@ -44,21 +48,22 @@ InteraccionP.addEventListener("submit", (e) => {
     e.preventDefault();
     let inputs = e.target.children;
     let modeloSelected = (inputs[1].value).toUpperCase();
-    sessionStorage.setItem("modeloSelected", modeloSelected);
+    const modeloCompleto = Catalogo.filter((item) => item.Modelo === modeloSelected); 
+    localStorage.setItem("modeloSelected", JSON.stringify(modeloCompleto));
     
-//Condicion para verificar la existencia del articulo
+    //Condicion para verificar la existencia del articulo
     if (!Catalogo.some((Item) => Item.Modelo === modeloSelected)){
         let accesible = sessionStorage.getItem("accesible");
         opciones.innerText =`Deposite alguna de las opciones anteriores (${accesible})`;
     }else{
-//Al encontrar el producto se dan las opciones de pago
+        //Al encontrar el producto se dan las opciones de pago
         let precioContado = (Catalogo.find(item => item.Modelo === modeloSelected).Precio)
         opciones.innerText = `Para el pago de ${modeloSelected} tenemos las opciones de CONTADO o CUOTAS, ¿Que prefiere?`;
         InteraccionP.addEventListener("submit", (e) => {
             e.preventDefault;
             let IM = document.getElementById("IM");
             let metodoDePago = (IM.value).toUpperCase();
-//calculo de cuotas.
+            //calculo de cuotas.
             const cuotas = []
             for (let c = 2; c <= 6; c++){
                 if (c === 3){
@@ -70,25 +75,27 @@ InteraccionP.addEventListener("submit", (e) => {
                 let calculoCuotas = ((precioContado / 2) + (precioContado * 0.21) / c);
                 respuestaCuotas = `${c} de $${calculoCuotas}`;
                 cuotas.push(respuestaCuotas);
-                };
-//eleccion entre CUOTAS o CONTADO.
+            };
+            //eleccion entre CUOTAS o CONTADO.
             if (metodoDePago === "CUOTAS"){
                 opciones.innerText = `Las opciones son ${cuotas}.
                 Presione el boton para añadir al carrito.`;
                 IM.remove();
                 finalizarProceso();
+                carrito.push(modeloCompleto);
             }else if (metodoDePago === "CONTADO"){
                 opciones.innerText = `El valor de la unidad es de $${precioContado}.
                 Presione el boton para añadir al carrito`;
                 IM.remove();
                 finalizarProceso();
-        }else{
+                carrito.push(modeloCompleto);
+            }else{
             opciones.innerText = "Seleccione algun metodo de pago";
         };
     });
 }
 });
-let modeloSelected = sessionStorage.getItem("modeloSelected");
+let compra = sessionStorage.getItem("compra");
 
 
 
