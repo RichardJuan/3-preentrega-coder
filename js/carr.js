@@ -17,10 +17,10 @@ let descuento = (valorTotalIncompleto - (valorTotalIncompleto * 0.9))
 valorTotal.innerText = `$${(valorTotalIncompleto)}`
 compra.innerText = `${articuloCompra[0].Modelo}`;
 valor.innerText = `$${articuloCompra[0].Precio}`;
-console.log(og)
-let cuponIngresado = ingresarCupon
+
 ingresarCupon.addEventListener("submit", (e) => {
     e.preventDefault();
+    let cuponIngresado = ingresarCupon.value
     if(cuponIngresado === og){
         cupon.innerText = `-${descuento}`;
         valorTotal.innerText = `${valorTotal - descuento}`
