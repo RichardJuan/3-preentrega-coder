@@ -1,12 +1,15 @@
+let boton = document.getElementById("boton1");
 function finalizarProceso(){
 InteraccionP.addEventListener("click", () => {
     localStorage.setItem("compra", JSON.stringify(carrito));
     console.log(carrito);
-    opciones.innerText = "Graciass"
-    let boton = document.getElementById("boton1");
+    opciones.innerText = `Graciass, DE REGALO por su primera compra obtiene un cupon del 10%, guardelo "${cuponGenerado}"`
     boton.remove();
     })
 }
+//Generacion de cupon de descuento
+let cuponGenerado = `OG${(Math.round(Math.random()* 100 + 200))}`;
+localStorage.setItem("OG", cuponGenerado);
 
 //Definicion del catalogo y sus elementos
 class Articulo {
@@ -40,6 +43,7 @@ cartera.addEventListener("submit", (e) => {
     let opciones = document.getElementById("opciones");
     //operador ternario en caso de que el monto sea menor al minimo
     Monto<45000?opciones.innerText="Lo siento, no contamos con ninguna unidad de ese monto":opciones.innerText = `Con $${Monto} a dispocisión, tenemos para ofrecerte: ${accesible}`;
+    boton.scrollIntoView({behavior:'smooth'});
 });
 //traemos el formulario de los productos
 let InteraccionP = document.getElementById("InteraccionP");
@@ -82,39 +86,16 @@ InteraccionP.addEventListener("submit", (e) => {
                 Presione el boton para añadir al carrito.`;
                 IM.remove();
                 finalizarProceso();
-                carrito.push(modeloCompleto);
+                carrito.push(modeloCompleto[0]);
             }else if (metodoDePago === "CONTADO"){
                 opciones.innerText = `El valor de la unidad es de $${precioContado}.
                 Presione el boton para añadir al carrito`;
                 IM.remove();
                 finalizarProceso();
-                carrito.push(modeloCompleto);
+                carrito.push(modeloCompleto[0]);
             }else{
             opciones.innerText = "Seleccione algun metodo de pago";
         };
     });
 }
 });
-let compra = sessionStorage.getItem("compra");
-
-
-
-
-/*let agregar = prompt(`¿Que articulo desea agregar? ${accesible}`)
-if(accesible.includes(agregar)){
-    carrito.push(agregar);
-    let elementoSeleccionado = Catalogo.find((elemento) => elemento.Modelo === agregar)
-    alert(`el costo de tu carrito es de $${elementoSeleccionado.Precio}`);
-}
-
-//Generacion de cupon de descuento
-let cupon = Math.round(Math.random()* 100 + 200);
-let cuponIngresado = prompt(`Felicidades, por ser su primer compra le regalamos un cupon del 10% OFF. INGRESE OG${cupon}`)
-
-//Calculo del costo del articulo - el descuento
-
-let costoTotal = carrito.reduce((total, elemento) => total + Catalogo.find((articulo) => articulo.Modelo === agregar).Precio, 0)*0.9;
-
-if(cuponIngresado === `OG${cupon}`){
-    alert(`El total a abonar sera de ${costoTotal}`)
-*/
