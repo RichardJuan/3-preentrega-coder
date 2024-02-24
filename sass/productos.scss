@@ -1,4 +1,10 @@
 
+.boton{
+    color: black;
+    background-color: $colorprin;
+    border: 3px outset $colorprin;
+    box-shadow: 5px 3px 3px black;
+}
 .contenedor {
     display: grid;
     border: 3px outset $colorprin;

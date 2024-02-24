@@ -175,6 +175,13 @@ footer a:hover {
     font-size: 6px;
   }
 }
+.boton {
+  color: black;
+  background-color: rgb(170, 125, 2);
+  border: 3px outset rgb(170, 125, 2);
+  box-shadow: 5px 3px 3px black;
+}
+
 .contenedor {
   display: grid;
   border: 3px outset rgb(170, 125, 2);
