@@ -1,28 +1,38 @@
-let Formulario = document.getElementById("Formulario")
-//Aca le damos funcion al formulario del inicio
-Formulario.addEventListener("submit", (e) => {
+
+let Formulario = document.getElementById("Formulario")//traemos el formulario al JS.
+Formulario.addEventListener("submit", (e) => { //Aca le damos funcion al formulario del inicio.
     e.preventDefault();
     let inputs = e.target.children; //aclaramos al input como objetivo y lo dividimos por posiciones.
     let Nombre = inputs[0].value;
-    let Nacimiento = inputs[1].value;
+    /////let Nacimiento = inputs[1].value;
     
     sessionStorage.setItem("Nombre", Nombre); //cargamos el Nombre al SessionStorage.
-
-    sessionStorage.setItem("fechaDeNacimiento", Nacimiento); //Lo mismo con la fecha de nacimiento.
-
-    //traemos la fecha de nacimiento del formulario
-    const fechaDeNacimiento = new Date (Nacimiento);
-
-    //declaramos la fecha de hoy
-    const hoy = Date.now();
-    const miliSegundosXAño = 31536000000;
-    const edad = Math.floor((hoy - fechaDeNacimiento) / miliSegundosXAño) //dividimos la dif entre la fecha actual y el nacimiento por la camtidad de milisegundos por año y redondeamos hacia el numero entero mas bajo 
     
-    //condicion?respuesta:respuestalternativa
-    let respuesta = document.getElementById("respuesta");
-    //Operador terrario implementado
-    edad >= 16?respuesta.innerText = `Bienvenido ${Nombre}, ingresa a "Productos" para que veas lo que tenemos para ofrecerte`: respuesta.innerText = "Recomenamos que seas mayor de 16 años para ingresar a nuestra pagina. Buena suerte, nos vemos pronto";
+    const años = Swal.fire({ //utilizamos un sweet alert para averiguar la edad del cliente.
+        title: "¿Cuántos años tienes?",
+        icon: "question",
+        input: "range",
+        inputLabel: "Selecciona tu edad",
+        inputAttributes: {
+            min: "8",
+            max: "120",
+            step: "1"
+        },
+        inputValue: 25
+    }).then((resultado) => { //a la respuesta le ejecutamos una función que determinara si tiene la edad requerida para ingresar a la pagina.
+        if (resultado.value >= 16) {
+            Swal.fire({ //sweet alert para dar el OK.
+                title: "Puedes pasar",
+                text: "Ingrese a productos para ver nuestro catalogo",
+                icon: "success",
+            })
+        } else {
+            Swal.fire({ //Sweet alert para advertir.
+                title: "Te recomendamos venir cuando cumplas los 16 años",
+                icon: "warning",
+            })
+        }
+    }).catch((error) => {
+        console.log(error);
+    });
 });
-
-
-let Nombre = sessionStorage.getItem("Nombre")
