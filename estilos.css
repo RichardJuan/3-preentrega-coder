@@ -35,7 +35,7 @@
   transition: 1.1s;
 }
 
-.registro {
+.byi {
   color: rgb(170, 125, 2);
   background-color: rgba(0, 0, 0, 0.39);
   border: 3px outset rgb(170, 125, 2);
@@ -89,7 +89,7 @@ h1, h3 {
 }
 
 video {
-  background-image: url(https://richardjuan.github.io/PreEntrega3-Richard/multimedia/publicacion3.jpg);
+  background-image: url(https://richardjuan.github.io/ProyectoFinal-Richard/multimedia/publicacion3.jpg);
   background-position: right;
   background-size: cover;
   width: 100%;
@@ -106,7 +106,7 @@ h4 {
 }
 
 main {
-  background-image: url(https://richardjuan.github.io/PreEntrega3-Richard/multimedia/fondo-humo.jpg);
+  background-image: url(https://richardjuan.github.io/ProyectoFinal-Richard/multimedia/fondo-humo.jpg);
   background-position: center;
   background-size: cover;
   height: 100%;
@@ -213,27 +213,27 @@ footer a:hover {
 }
 
 .item1 {
-  background-image: url(https://richardjuan.github.io/PreEntrega3-Richard/multimedia/publicacion1.jpg);
+  background-image: url(https://richardjuan.github.io/ProyectoFinal-Richard/multimedia/publicacion1.jpg);
   grid-area: item1;
 }
 
 .item2 {
-  background-image: url(https://richardjuan.github.io/PreEntrega3-Richard/multimedia/publicacion2.jpg);
+  background-image: url(https://richardjuan.github.io/ProyectoFinal-Richard/multimedia/publicacion2.jpg);
   grid-area: item2;
 }
 
 .item3 {
-  background-image: url(https://richardjuan.github.io/PreEntrega3-Richard/multimedia/publicacion3.jpg);
+  background-image: url(https://richardjuan.github.io/ProyectoFinal-Richard/multimedia/publicacion3.jpg);
   grid-area: item3;
 }
 
 .item4 {
-  background-image: url(https://richardjuan.github.io/PreEntrega3-Richard/multimedia/publicacion4.jpg);
+  background-image: url(https://richardjuan.github.io/ProyectoFinal-Richard/multimedia/publicacion4.jpg);
   grid-area: item4;
 }
 
 .item5 {
-  background-image: url(https://richardjuan.github.io/PreEntrega3-Richard/multimedia/publicacion5.jpg);
+  background-image: url(https://richardjuan.github.io/ProyectoFinal-Richard/multimedia/publicacion5.jpg);
   grid-area: item5;
 }
 
@@ -305,6 +305,13 @@ iframe {
   .col-lg-8 {
     margin-left: 17%;
   }
+}
+.cuadro {
+  background-color: rgba(0, 0, 0, 0.671);
+  border: 3px outset rgb(170, 125, 2);
+  padding: 10%;
+  height: 250px;
+  box-shadow: 5px 5px 4px black;
 }
 
 /*# sourceMappingURL=estilos.css.map */
