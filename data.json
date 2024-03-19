@@ -1,0 +1,7 @@
+[
+    {"id": 1,"foto" : "https://richardjuan.github.io/ProyectoFinal-Richard/multimedia/publicacion1.jpg" , "Modelo" : "Nike, STEFAN JANOSKI", "Precio" : 45000},
+    {"id": 2, "foto" : "https://richardjuan.github.io/ProyectoFinal-Richard/multimedia/publicacion2.jpg" , "Modelo" : "Nike, AIR FORCE 1", "Precio" : 70000},
+    {"id": 3, "foto" : "https://richardjuan.github.io/ProyectoFinal-Richard/multimedia/publicacion3.jpg"  , "Modelo" : "Nike, AIR MAX 90", "Precio" : 80000},
+    {"id": 4, "foto" : "https://richardjuan.github.io/ProyectoFinal-Richard/multimedia/publicacion4.jpg" , "Modelo" : "Nike, JORDAN 1", "Precio" : 220000},
+    {"id": 5, "foto" : "https://richardjuan.github.io/ProyectoFinal-Richard/multimedia/publicacion5.jpg"  , "Modelo" : "Nike, JORDAN 5", "Precio" : 260000}
+]

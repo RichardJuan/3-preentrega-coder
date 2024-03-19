@@ -1,4 +1,12 @@
+const listadoDeProd = document.getElementById("listadoDeProd");
 let boton = document.getElementById("boton1"); // boton extraido del HTML
+function filtradoDeProd(productosFiltrado){
+    // Iterar sobre la colección de elementos
+    for (let i = 0; i < productosFiltrado.length; i++) {
+        const elementosCard = document.getElementById(productosFiltrado[i].id);
+        elementosCard.remove();
+    
+}} 
 function finalizarProceso(){ //Definicion del proceso final al añadir al carrito
 InteraccionP.addEventListener("click", () => {
     localStorage.setItem("compra", JSON.stringify(carrito));
@@ -26,20 +34,48 @@ InteraccionP.addEventListener("click", () => {
 let cuponGenerado = `OG${(Math.round(Math.random()* 100 + 200))}`;
 localStorage.setItem("OG", cuponGenerado);
 class Articulo { //Definicion del catalogo y sus elementos
-    constructor(Marca, Modelo, Precio, Talle) {
-        this.Marca = Marca;
+    constructor(id, foto, Modelo, Precio) {
+        this.id = id;
+        this.foto = foto;
         this.Modelo = Modelo;
         this.Precio = Precio;
-        this.Talle = Talle;
     }
 }
-//elementos
-const NSJ = new Articulo("Nike", "STEFAN JANOSKI", 45000, 41);
-const AF1 = new Articulo("Nike", "AIR FORCE 1", 70000, 41);
-const AM90 = new Articulo("Nike", "AIR MAX 90", 80000, 41);
-const J1 = new Articulo("Nike", "JORDAN 1", 220000, 41);
-const J5 = new Articulo("Nike", "JORDAN 5", 260000, 41);
-const Catalogo = [NSJ, AF1, AM90, J1, J5]; //array de los elementos
+//traeyendo elementos
+const catalogo = []
+const trayendoElementos = async () => {
+    try{
+        const response = await fetch("../data.json");
+        const data = await response.json();
+        data.forEach((item) => {
+            const div = document.createElement("div");
+            div.setAttribute("id", item.id);
+            div.classList.add("prod")
+            div.innerHTML = `
+            <div class="card m-5 col-md-4" style="width: 20rem;">
+            <img class="card-img-top" src="${item.foto}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">${item.Modelo}</h5>
+                <p class="card-text">$${item.Precio}</p>
+                <a href="#" class="btn btn-primary">Agregar a carrito</a>
+                </div>
+            </div>
+            `
+            listadoDeProd.append(div);
+        const articulo = new Articulo (item.id, item.foto, item.Modelo, item.Precio);
+
+
+        catalogo.push(articulo)
+        });
+        
+
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+trayendoElementos();
+
 const carrito = [] //array de carrito
 let cartera = document.getElementById("cartera");//declaracion de Monto y filtrado de catalogo para opciones disponibles
 cartera.addEventListener("click", () => {
@@ -58,12 +94,8 @@ cartera.addEventListener("click", () => {
         inputPlaceholder: "Cuanto está dispuesto a invertir",
         showCancelButton: true,
     }).then(Monto => {
-    let Filtrado = Catalogo.filter ((item) => item.Precio <= Monto.value); //filtrado de que elementos entrar en el rango de disponibilidad
-    const accesible = Filtrado.map((elemento) => elemento.Modelo);//Se agregan a un array generado automaticamente
-    sessionStorage.setItem("accesible", accesible);
-    let opciones = document.getElementById("opciones");//traemos la seccion inferior del contenedor del HTML
-    opciones.innerText = `Con $${Monto.value} a dispocisión, tenemos para ofrecerte: ${accesible}`;//Mostramos en el HTML los ACCESIBLES
-    boton.scrollIntoView({behavior:'smooth'});//Comando para que baje el scroll al finalizar el proceso
+    let Filtrado = catalogo.filter ((item) => item.Precio > Monto.value); //filtrado de que elementos entrar en el rango de disponibilidad
+    filtradoDeProd(Filtrado);
     });
 });
 let InteraccionP = document.getElementById("InteraccionP");//traemos el formulario de los productos
