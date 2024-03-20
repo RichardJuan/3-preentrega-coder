@@ -35,13 +35,6 @@
   transition: 1.1s;
 }
 
-.byi {
-  color: rgb(170, 125, 2);
-  background-color: rgba(0, 0, 0, 0.39);
-  border: 3px outset rgb(170, 125, 2);
-  padding: 0.6%;
-}
-
 p {
   color: rgb(170, 125, 2);
   text-shadow: 5px 5px 4px black;
@@ -316,7 +309,12 @@ iframe {
   border: 3px outset rgb(170, 125, 2);
   padding: 10%;
   height: 250px;
+  width: auto;
   box-shadow: 5px 5px 4px black;
+}
+
+.form h6 {
+  text-align: left;
 }
 
 /*# sourceMappingURL=estilos.css.map */
